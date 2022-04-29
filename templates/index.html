@@ -4,7 +4,7 @@
     body {
         font-family: "Roboto", sans-serif;
         font-size: 18px;
-        background-color: #fdfdfd;
+        background-color: #F0FFF0;
     }
 
     .head_text {
@@ -14,6 +14,9 @@
     .card {
         box-shadow: 0 16px 48px #E3E7EB;
     }
+    .btn-link {
+        color: black;
+    }
 </style>
 
 <header class="masthead">
@@ -22,8 +25,8 @@
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
-                    <p class="text-light">We Love Django As much as you do..! &nbsp
+                    <h3 class=" site-heading my-4 mt-3 text-white"> The Cereal Blog </h3>
+                    <p class="text-light">Where we don't get too cerious.. &nbsp
                     </p>
                 </div>
             </div>
@@ -35,14 +38,31 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
             {% for post in post_list %}
-            <div class="card mb-4">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      {{ post.title }}
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+                    <p class="card-text">{{ post.content }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--            <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <p class="card-text">{{post.content|slice:":120" }}</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary" >Read More</a> 
                 </div>
-            </div>
+            </div>-->
             {% endfor %}
         </div>
         {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}

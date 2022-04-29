@@ -12,29 +12,66 @@
 
     <body>
         <style>
-            body {
+        body {
             font-family: "Roboto", sans-serif;
             font-size: 17px;
-            background-color: #fdfdfd;
+            background-color: #F0FFF0;
         }
         .shadow {
             box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
         }
         .btn-danger {
             color: #fff;
-            background-color: #f00000;
-            border-color: #dc281e;
+            background-color: #D3D3D3;
+            border-color: #D3D3D3;
         }
         .masthead {
-            background: #3398E1;
+            background: #2E8B57;
             height: auto;
             padding-bottom: 15px;
             box-shadow: 0 16px 48px #E3E7EB;
             padding-top: 10px;
         }
+        .btn-primary{
+            color: #fff;
+            background-color: #3CB371;
+            border-color: #3CB371; 
+        }
     </style>
 
         <!-- Navigation -->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">Sean Blog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blog Posts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Comments</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  More...
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Authors</a>
+                  <a class="dropdown-item" href="#">History Facts</a>
+                </div>
+              </li>
+            </ul>
+              <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+          </div>
+        </nav><!--
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'home' %}">Sean Blog</a>
@@ -56,7 +93,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>-->
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
@@ -64,5 +101,8 @@
         <footer class="py-3 bg-grey">
             <p class="m-0 text-dark text-center ">Copyright &copy; Sean Blog</p>
         </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     </body>
 </html>
